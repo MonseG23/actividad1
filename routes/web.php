@@ -5,6 +5,7 @@ use App\Models\universal;
 
 
 Route::get('/', function () {
+    return view('welcome');
     echo 'hello guys! this is y first laravel';
     echo '<pre>';
     print_r (universe ::all());
