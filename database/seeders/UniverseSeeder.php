@@ -4,23 +4,23 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\Gender;
+use App\models\universe;
 
-class GenderSeeder extends Seeder
+class UniverseSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        Gender::create([
-            'name'=> 'famale'
+        universe::create([
+            'name' => 'Marvel'
         ]);
-        Gender::create([
-            'name'=> 'male'
+        Universe::create([
+            'name' => 'Dc comics'
         ]);
-        Gender::create([
-            'name'=> 'others'
-        ]);
+
+
+        //
     }
 }
