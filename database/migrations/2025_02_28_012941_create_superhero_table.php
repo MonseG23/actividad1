@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('superhero', function (Blueprint $table) {
             $table->id();
             $table->foreignId('universe_id')->constrained('universes');
-            $table->foreignId('gender_id')->constrained('gerders');
+            $table->foreignId('gender_id')->constrained('genders');
             $table->string('name',100);
             $table->string('real_name',100);
             $table->string('picture',200)->nullable();
@@ -31,3 +31,5 @@ return new class extends Migration
         Schema::dropIfExists('superhero');
     }
 };
+
+
