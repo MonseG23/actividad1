@@ -3,9 +3,12 @@
 namespace Database\Seeders;
 
 use App\Models\User;
+use App\Models\Superhero;
+use Illuminate\Database\Seeder;
+
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use Illuminate\Database\Seeder;
+//use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -25,6 +28,9 @@ class DatabaseSeeder extends Seeder
            GenderSeeder:: class,
            UniverseSeeder:: Class
        ]);
+
+       SuperHero::factory(100)->create();
+
 
      }
 }

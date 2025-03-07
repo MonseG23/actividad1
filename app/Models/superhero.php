@@ -10,6 +10,6 @@ class superhero extends Model
 {
     use HasFactory;
 
-    protected $table = 'superheroes';
-    
+    protected $table = 'superhero';
+
 }

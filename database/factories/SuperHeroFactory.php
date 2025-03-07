@@ -3,11 +3,12 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Models\Superhero;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Gender>
  */
-class GenderFactory extends Factory
+class SuperHeroFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -21,7 +22,8 @@ class GenderFactory extends Factory
             'gender_id'    =>  fake()->numberBetween(1, 3),
             'name'         =>  fake()->name(),
             'real_name'    =>  fake()->userName(),
-            'picture'      =>  fake()->imagerUrl(640, 480, 'superheroes'),
+            'picture'      =>  fake()->imageUrl(640, 480, 'superhero', true)
         ];
     }
 }
+
