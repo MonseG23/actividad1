@@ -21,6 +21,8 @@ class SuperHeroController extends Controller
      */
     public function index()
     {
+        $superheroes = Superheroe::all();
+        return view('superheroes.index', compact('superheroes'));
 
     }
 

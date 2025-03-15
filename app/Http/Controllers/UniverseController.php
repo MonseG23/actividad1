@@ -40,8 +40,9 @@ class UniverseController extends Controller
     {
         
         Universe::create([
-            'name'   => $request->name 
-        ]);
+            'name'   => $request->name ,
+            'description' => $request->description,
+         ]);
 
         return to_route('universes.index');
 
@@ -53,9 +54,10 @@ class UniverseController extends Controller
      */
     public function show(string $id)
     {
-        $superhero =Superhero::find($id);
-        return view('superheroes.show',compact('superhero'));
 
+        $universe = Universe::find($id);
+        
+        return view('universes.show', compact('universe'));
 
     }
 
