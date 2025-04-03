@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Models\universal;
+use App\Models\universe;
 use App\Http\Controllers\GenderController;
 use App\Http\Controllers\UniverseController;
 use App\Http\Controllers\SuperHeroController;
@@ -10,7 +10,7 @@ Route::get('/', function () {
     //return view('welcome');
     echo 'hello guys! this is y first laravel application';
     echo '<pre>';
-    print_r (universe ::all());
+    print_r (Universe::all());
     echo '<pre>';
     
     dump (universe ::all());
