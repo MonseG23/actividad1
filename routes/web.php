@@ -1,27 +1,20 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-use App\Models\universe;
-use App\Http\Controllers\GenderController;
-use App\Http\Controllers\UniverseController;
-use App\Http\Controllers\SuperHeroController;
 
 Route::get('/', function () {
-    //return view('welcome');
-    echo 'hello guys! this is y first laravel application';
-    echo '<pre>';
-    print_r (Universe::all());
-    echo '<pre>';
-    
-    dump (universe ::all());
-    //SELECT FROM universes
-    //return view('welcome');
+    return view('welcome');
 });
 
-Route::get('/gender',[GenderController::class, 'index']);
-//Route::get('/universes',[UniversesController::class, 'index']);
-//Route::get('/create-niverses ',[UniversesController::class, 'index']);
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::resource('universes', UniverseController:: class);
-Route::resource('superheroes', SuperHeroController:: class);
-Route::resource('genders', GenderController::class);
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+require __DIR__.'/auth.php';
