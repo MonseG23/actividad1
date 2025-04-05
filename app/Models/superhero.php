@@ -20,5 +20,9 @@ class SuperHero extends Model
         'picture'
         
     ];
-
+    public function superheroes()
+    {
+        return $this->hasMany(Superhero::class);
+    }
 }
+
