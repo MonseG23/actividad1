@@ -28,6 +28,8 @@ Route::middleware('auth')->group(function () {
         'superheroes'=> SuperheroController::class,
     ]);
 
+    Route::post('/upload', [FileController::class, 'upload'])->name('upload');
+
 
 });
 
