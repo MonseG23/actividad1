@@ -27,6 +27,9 @@ Route::middleware('auth')->group(function () {
     Route::resources([ 
         'superheroes'=> SuperheroController::class,
     ]);
+    Route::get('/form', function () {
+        return view('form');
+    });
 
     Route::post('/upload', [FileController::class, 'upload'])->name('upload');
 

@@ -16,9 +16,13 @@
      }
  
      public function download(Request $request)
+
      {
+        if($user->role_id ==1){
          return Storage::download($request->path);
- 
+
+     } else {
+        abort(403);
      }
- }
- 
+    }
+}
